@@ -1,0 +1,13 @@
+<h2>New Task</h2>
+<form (submit) = 'create()'>
+  Title: <input type = 'text' name = 'title' [(ngModel)] = 'task.title'>
+  Description: <input type = 'text' name = 'description' [(ngModel)] = 'task.description'>
+  Completed: <input type = 'text' name = 'completed' [(ngModel)] = 'task.completed'>
+  <input type = 'submit' value = 'Create a new task'>
+</form>
+<h2>My tasks</h2>
+<div *ngFor = 'let task of tasks'>
+  <p>Id: {{task._id}}, Title: {{task.title}}, Description: {{task.description}}, Completed: {{task.completed}}</p>
+  <button (click) = 'edit(task._id)'>Edit</button>
+  <button (click) = 'delete(task._id)'>Delete</button>
+</div>
